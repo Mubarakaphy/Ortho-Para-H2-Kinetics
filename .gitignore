@@ -1,0 +1,26 @@
+.pixi/
+.venv/
+.env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Build & dist
+build/
+dist/
+
+# OS
+.DS_Store
+
+# Figures & data (keep PNGs)
+figs/*.pdf
+figs/*.svg
+
+# (Optional) any compiled libs — avoid committing huge binaries
+*.so
+*.dylib
+*.dll

@@ -1,0 +1,3 @@
+[project.scripts]
+equilibrium = "ortho_para.plots:plot_equilibrium_curve"
+relaxation = "ortho_para.plots:plot_relaxation"
