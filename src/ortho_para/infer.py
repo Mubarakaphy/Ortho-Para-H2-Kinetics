@@ -3,6 +3,8 @@ from scipy.optimize import curve_fit
 from .physics import f_ortho_eq
 
 def _relaxation_model(t, k, T, f0):
+    """Analytic solution of df/dt = -k (f - f_eq(T))."""
+    t = np.asarray(t, dtype=float)
     f_eq = f_ortho_eq(T)
     return f_eq + (f0 - f_eq) * np.exp(-k * t)
 
