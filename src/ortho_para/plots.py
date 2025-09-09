@@ -38,3 +38,15 @@ def plot_relaxation(T=20.0, k_values=(1e-6, 1e-4, 1e-2, 1.0),
     if show:
         plt.show()
     plt.close()
+
+def cli_fit_k():
+    import argparse, numpy as np
+    p = argparse.ArgumentParser()
+    p.add_argument("--csv", required=True, help="CSV with columns: t_s,f")
+    p.add_argument("--T", type=float, required=True)
+    p.add_argument("--f0", type=float, required=True)
+    args = p.parse_args()
+    t, f = np.loadtxt(args.csv, delimiter=",", skiprows=1, unpack=True)
+    from .infer import fit_k
+    k_hat, k_std = fit_k(t, f, args.T, args.f0)
+    print(f"k_hat = {k_hat:.3e} s^-1  (± {k_std:.1e})")
