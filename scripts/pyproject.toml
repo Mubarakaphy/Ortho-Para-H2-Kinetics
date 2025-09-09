@@ -1,3 +1,7 @@
 [project.scripts]
 equilibrium = "ortho_para.plots:plot_equilibrium_curve"
 relaxation = "ortho_para.plots:plot_relaxation"
+
+[project.scripts]
+ortho-feq = "ortho_para.plots:cli_equilibrium"
+ortho-relax = "ortho_para.plots:cli_relaxation"
