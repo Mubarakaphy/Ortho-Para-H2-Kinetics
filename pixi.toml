@@ -7,6 +7,9 @@ platforms = ["linux-64"]
 equilibrium = "PYTHONPATH=./src python -c \"import os; os.makedirs('figs', exist_ok=True); from ortho_para.plots import plot_equilibrium_curve; plot_equilibrium_curve(show=True, save='figs/equilibrium.png')\""
 relaxation  = "PYTHONPATH=./src python -c \"import os; os.makedirs('figs', exist_ok=True); from ortho_para.plots import plot_relaxation; plot_relaxation(T=20.0, show=True, save='figs/relaxation_T20K.png')\""
 test        = "PYTHONPATH=./src pytest -q"
+fitk        = "PYTHONPATH=./src python -c \"from ortho_para.plots import cli_fit_k as c; c()\""
+fitk_noisy  = "PYTHONPATH=./src python -c \"from ortho_para.validation import cli_fitk_noisy as c; c()\""
+jmax_conv   = "PYTHONPATH=./src python -c \"from ortho_para.validation import cli_jmax_convergence as c; c()\""
 
 [dependencies]
 python = ">=3.10"
