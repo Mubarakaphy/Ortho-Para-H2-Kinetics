@@ -1,29 +1,51 @@
 # Ortho–Para H₂ Kinetics
 
-> Equilibrium and relaxation of ortho–para hydrogen with a tiny, reproducible Python package.  
-> **Why it matters:** spin isomer composition impacts low-T hydrogen storage, cooling and materials testing.
+A minimal, reproducible **Python package** for modeling the equilibrium and relaxation dynamics of ortho–para hydrogen.
+
+> **Why it matters:** The ortho/para spin isomer composition crucially affects low-temperature **hydrogen storage**, **cooling efficiency**, and **materials testing**.
 
 <p align="center">
-  <img src="figs/equilibrium.png" width="500" alt="Equilibrium">
+  <img src="figs/equilibrium.png" width="500" alt="Equilibrium fraction vs. temperature">
 </p>
 
 <p align="center">
-  <img src="figs/relaxation_T20K.png" width="500" alt="Relaxation">
+  <img src="figs/relaxation_T20K.png" width="500" alt="Relaxation at 20 K">
 </p>
 
-# Ortho–Para H₂ Kinetics (Model)
+---
+
+## Model Overview
 
 Compute:
-- Equilibrium ortho fraction $f_\mathrm{ortho}^{eq}(T)$
-- Simple first-order relaxation $\dot f = -k (f - f_{eq}(T))$
+- **Equilibrium ortho fraction** $f_\mathrm{ortho}^{eq}(T) $
+- **First-order relaxation dynamics** $\dot f = -k (f - f_{eq}(T)) $
 
-## Quick start
+---
 
-### Using pip
+## Quick Start
+
+### Installation
 ```bash
-python -m venv .venv && source .venv/bin/activate
+python -m venv .venv
+source .venv/bin/activate
 pip install -e . pytest
+```
+
+### Run scripts
+```bash
 python scripts/plot_equilibrium.py
 python scripts/plot_relaxation.py
 pytest -q
+```
 
+---
+
+## Features
+- Analytical equilibrium expression and relaxation ODE  
+- Lightweight (no external data dependencies)  
+- Reproducible plots and tests included  
+
+---
+
+📘 **License:** MIT  
+🧠 **Author:** Mubarak A. S. Mohammed (GitHub: @Mubarakaphy)
